@@ -1,10 +1,11 @@
-# BerlinClock
+# [Berlin clock kata](http://agilekatas.co.uk/katas/BerlinClock-Kata)
 
-Playing the game
------------------
+Coded in Vanilla Javascript and tested with [Jasmine](http://pivotal.github.com/jasmine/).
 
-Open the index.html file.  The game may not work correctly for older
-browsers.
+Playing with the clock
+-----------------------
+
+Open the index.html file
 
 ```bash
 open index.html
@@ -14,7 +15,7 @@ Running the tests
 ------------------
 
 Open the SpecRunner.html file.
-This will automatically run all of the [Jasmine] specs for the project.
+This will automatically run all of the [Jasmine](http://pivotal.github.com/jasmine/) specs for the project.
 
 ```bash
 open SpecRunner.html
