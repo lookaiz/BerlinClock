@@ -25,12 +25,12 @@ describe("BerlinClock", function(){
 			expect(this.clock.setTime.bind(this.clock, "09:21:%")).toThrowError(Error);
 		});
 
-		it('only hour', function() {
+		it('only one field', function() {
 			expect(this.clock.setTime.bind(this.clock, "18")).toThrowError(Error);
 		});
 
-		it('only hour and minutes', function() {
-			expect(this.clock.setTime.bind(this.clock, "17:45")).toThrowError(Error);
+		it('too many fields', function() {
+			expect(this.clock.setTime.bind(this.clock, "17:13:14:16")).toThrowError(Error);
 		});
 
 		it('hour > 23', function() {

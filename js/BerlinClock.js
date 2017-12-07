@@ -8,6 +8,11 @@ var BerlinClock = function() {
 
 BerlinClock.prototype.setTime = function(time) {
     var timeElements = time.split(':');
+
+    if(timeElements.length == 2) {
+        timeElements.push("00");
+    }
+
     if (timeElements.length != 3) {
         throw new Error('Invalid time value: ' + time);
     }
