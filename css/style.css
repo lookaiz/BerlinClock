@@ -1,43 +1,39 @@
-
-.berlin-clock{
+.berlin-clock {
   margin: auto;
   text-align: center;
   width: 200px;
-  /* border:1px solid rgb(70, 70, 70); */
-  /* border-radius: 5px; */
-  /* background-color: rgb(187, 187, 187); */
 }
 
-.row{
+.row {
   margin: 5px 0;
 }
 
-.unit{
+.unit {
   width: 30px;
   height: 20px;
-  border:1px solid rgb(156, 156, 156);
+  border: 1px solid rgb(156, 156, 156);
   display: inline-block;
   border-radius: 5px;
 }
 
-.sec.unit{
+.sec.unit {
   width: 40px;
   height: 40px;
   border-radius: 20px;
 }
 
-.five-minute{
-  font-size:10px;
+.five-minute {
+  font-size: 10px;
 }
 
-.five-minute .minute.unit{
+.five-minute .minute.unit {
   width: 10px;
 }
 
-.red{
+.red {
   background-color: red;
 }
 
-.yellow{
+.yellow {
   background-color: yellow;
 }

@@ -1,10 +1,4 @@
-var BerlinClock = function(h, m, s) {
-	this.time = new Date(0,0,0, h, m, s);
-}
-
-var BerlinClock = function() {
-
-}
+var BerlinClock = function() {}
 
 BerlinClock.prototype.setTime = function(time) {
     var timeElements = time.split(':');

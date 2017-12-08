@@ -1,134 +1,136 @@
 <!DOCTYPE html>
-  <head>
-    <meta charset="utf-8">
-    <title>Berlin Clock Kata</title>
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-      <div class="berlin-clock">
-         <div class="row">
-              <div class="sec unit" id="seconds"></div>
-          </div>
 
-          <div class="row">
-              <div class="unit" id="five-hour-0"></div>
-              <div class="unit" id="five-hour-1"></div>
-              <div class="unit" id="five-hour-2"></div>
-              <div class="unit" id="five-hour-3"></div>
-          </div>
+<head>
+  <meta charset="utf-8">
+  <title>Berlin Clock Kata</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-          <div class="row">
-              <div class="unit" id="one-hour-0"></div>
-              <div class="unit" id="one-hour-1"></div>
-              <div class="unit" id="one-hour-2"></div>
-              <div class="unit" id="one-hour-3"></div>
-          </div>
-
-          <div class="five-minute row">
-              <div class="minute unit" id="five-minute-0"></div>
-              <div class="minute unit" id="five-minute-1"></div>
-              <div class="minute unit" id="five-minute-2"></div>
-              <div class="minute unit" id="five-minute-3"></div>
-              <div class="minute unit" id="five-minute-4"></div>
-              <div class="minute unit" id="five-minute-5"></div>
-              <div class="minute unit" id="five-minute-6"></div>
-              <div class="minute unit" id="five-minute-7"></div>
-              <div class="minute unit" id="five-minute-8"></div>
-              <div class="minute unit" id="five-minute-9"></div>
-              <div class="minute unit" id="five-minute-10"></div>
-          </div>
-
-          <div class="row">
-              <div class="unit" id="one-minute-0"></div>
-              <div class="unit" id="one-minute-1"></div>
-              <div class="unit" id="one-minute-2"></div>
-              <div class="unit" id="one-minute-3"></div>
-          </div>
-
-      </div>
-    
-    <div class="berlin-clock">
-      <div>
-        <label>Digital time : </label>
-        <input id="digital-time" type="time" name="digital-time" step="1" value="00:00:00" min="00:00:00" max="23:59:59">
-      </div>
-
-      <div>
-        <button id="convert">Convert to Berlin time</button>
-      </div>
+<body>
+  <div class="berlin-clock">
+    <div class="row">
+      <div class="sec unit" id="seconds"></div>
     </div>
 
-    <script src="js/BerlinClock.js"></script>
-    <script>
+    <div class="row">
+      <div class="unit" id="five-hour-0"></div>
+      <div class="unit" id="five-hour-1"></div>
+      <div class="unit" id="five-hour-2"></div>
+      <div class="unit" id="five-hour-3"></div>
+    </div>
 
-    document.addEventListener("DOMContentLoaded", function(event) { 
+    <div class="row">
+      <div class="unit" id="one-hour-0"></div>
+      <div class="unit" id="one-hour-1"></div>
+      <div class="unit" id="one-hour-2"></div>
+      <div class="unit" id="one-hour-3"></div>
+    </div>
+
+    <div class="five-minute row">
+      <div class="minute unit" id="five-minute-0"></div>
+      <div class="minute unit" id="five-minute-1"></div>
+      <div class="minute unit" id="five-minute-2"></div>
+      <div class="minute unit" id="five-minute-3"></div>
+      <div class="minute unit" id="five-minute-4"></div>
+      <div class="minute unit" id="five-minute-5"></div>
+      <div class="minute unit" id="five-minute-6"></div>
+      <div class="minute unit" id="five-minute-7"></div>
+      <div class="minute unit" id="five-minute-8"></div>
+      <div class="minute unit" id="five-minute-9"></div>
+      <div class="minute unit" id="five-minute-10"></div>
+    </div>
+
+    <div class="row">
+      <div class="unit" id="one-minute-0"></div>
+      <div class="unit" id="one-minute-1"></div>
+      <div class="unit" id="one-minute-2"></div>
+      <div class="unit" id="one-minute-3"></div>
+    </div>
+
+  </div>
+
+  <div class="berlin-clock">
+    <div>
+      <label>Digital time : </label>
+      <input id="digital-time" type="time" name="digital-time" step="1" value="00:00:00" min="00:00:00" max="23:59:59">
+    </div>
+
+    <div>
+      <button id="convert">Convert to Berlin time</button>
+    </div>
+  </div>
+
+  <script src="js/BerlinClock.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
 
       var clock = new BerlinClock();
 
-      document.getElementById('convert').addEventListener('click', function() {
-            var time = document.getElementById("digital-time").value;
-            clock.setTime(time);
+      document.getElementById('convert').addEventListener('click', function () {
+        var time = document.getElementById("digital-time").value;
+        clock.setTime(time);
 
-            // seconds row
-            var seconds = clock.getSeconds();
-            if(seconds === 'Y') {
-              document.getElementById("seconds").classList.add('yellow');
-            }
-            else {
-              document.getElementById("seconds").classList.remove('yellow');
-            }
+        // seconds row
+        var seconds = clock.getSeconds();
+        if (seconds === 'Y') {
+          document.getElementById("seconds").classList.add('yellow');
+        }
+        else {
+          document.getElementById("seconds").classList.remove('yellow');
+        }
 
-            // 5-hours row
-            var fiveHours = clock.getFiveHoursRow();
-            for(k = 0; k < 4; k++) {
-              if(fiveHours[k] === 'R') {
-                document.getElementById("five-hour-" + k).classList.add('red');
-              }
-              else {
-                document.getElementById("five-hour-" + k).classList.remove('red');
-              }  
-            }
+        // 5-hours row
+        var fiveHours = clock.getFiveHoursRow();
+        for (k = 0; k < 4; k++) {
+          if (fiveHours[k] === 'R') {
+            document.getElementById("five-hour-" + k).classList.add('red');
+          }
+          else {
+            document.getElementById("five-hour-" + k).classList.remove('red');
+          }
+        }
 
-            // 1-hour row
-            var oneHours = clock.getOneHoursRow();
-            for(k = 0; k < 4; k++) {
-              if(oneHours[k] === 'R') {
-                document.getElementById("one-hour-" + k).classList.add('red');
-              }
-              else {
-                document.getElementById("one-hour-" + k).classList.remove('red');
-              } 
-            }
+        // 1-hour row
+        var oneHours = clock.getOneHoursRow();
+        for (k = 0; k < 4; k++) {
+          if (oneHours[k] === 'R') {
+            document.getElementById("one-hour-" + k).classList.add('red');
+          }
+          else {
+            document.getElementById("one-hour-" + k).classList.remove('red');
+          }
+        }
 
-            // 5-minutes row
-            var fiveMinutes = clock.getFiveMinutesRow();
-            for(k = 0; k < 11; k++) {
-              var element = document.getElementById("five-minute-" + k);
-              if(fiveMinutes[k] === 'R') {
-                element.classList.add('red');
-              }
-              else if(fiveMinutes[k] === 'Y') {
-                element.classList.add('yellow');
-              }
-              else {
-                element.classList.remove('red');
-                element.classList.remove('yellow');
-              } 
-            }
+        // 5-minutes row
+        var fiveMinutes = clock.getFiveMinutesRow();
+        for (k = 0; k < 11; k++) {
+          var element = document.getElementById("five-minute-" + k);
+          if (fiveMinutes[k] === 'R') {
+            element.classList.add('red');
+          }
+          else if (fiveMinutes[k] === 'Y') {
+            element.classList.add('yellow');
+          }
+          else {
+            element.classList.remove('red');
+            element.classList.remove('yellow');
+          }
+        }
 
-            // 1-minute row
-            var oneMinutes = clock.getOneMinutesRow();
-            for(k = 0; k < 4; k++) {
-              if(oneMinutes[k] === 'Y') {
-                document.getElementById("one-minute-" + k).classList.add('yellow');
-              }
-              else {
-                document.getElementById("one-minute-" + k).classList.remove('yellow');
-              } 
-            }
+        // 1-minute row
+        var oneMinutes = clock.getOneMinutesRow();
+        for (k = 0; k < 4; k++) {
+          if (oneMinutes[k] === 'Y') {
+            document.getElementById("one-minute-" + k).classList.add('yellow');
+          }
+          else {
+            document.getElementById("one-minute-" + k).classList.remove('yellow');
+          }
+        }
 
-          });
+      });
     });
   </script>
-  </body>
+</body>
+
 </html>
