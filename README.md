@@ -2,7 +2,7 @@
 
 ![image](http://agilekatas.co.uk/static/img/katas/kata_berlinclock.png)
 
-Coded in Vanilla Javascript and tested with [Jasmine](http://pivotal.github.com/jasmine/).
+Coded in Vanilla Javascript and tested with [Jasmine](https://jasmine.github.io/).
 
 Playing with the clock
 -----------------------
@@ -17,7 +17,7 @@ Running the tests
 ------------------
 
 Open the `SpecRunner.html` file.
-This will automatically run all of the [Jasmine](http://pivotal.github.com/jasmine/) specs for the project.
+This will automatically run all of the [Jasmine](https://jasmine.github.io/) specs for the project.
 
 ```bash
 open SpecRunner.html
